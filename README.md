@@ -4,7 +4,8 @@
 [![Agent Plugins](https://img.shields.io/badge/Agent_Plugins-1.0.0-blue.svg)](https://agent-plugins.org)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1.0-green.svg)](https://shop.alshhbaa.com/openapi.json)
 [![MCP](https://img.shields.io/badge/MCP-streamable--http-orange.svg)](https://shop.alshhbaa.com/.well-known/mcp)
-[![smithery badge](https://smithery.ai/badge/alshhbaa-r/store)](https://smithery.ai/servers/alshhbaa-r/store)
+[![Smithery](https://img.shields.io/badge/Smithery-alshhbaa--r%2Fstore-blue.svg)](https://smithery.ai/servers/alshhbaa-r/store)
+[![skills.sh](https://img.shields.io/badge/skills.sh-alshhbaa--store-blue.svg)](https://skills.sh/alshhbaa/alshhbaa-agent-kit)
 
 The official AI Agent Integration Kit for **[Alshhbaa Copperware (متجر نحاسيات الشهباء)](https://shop.alshhbaa.com)** — a premier Saudi artisan retailer specializing in handcrafted brass chandeliers, Islamic & heritage lighting, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
 
