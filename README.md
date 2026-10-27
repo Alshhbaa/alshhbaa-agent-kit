@@ -1,4 +1,4 @@
-# Alshhbaa Copperware AI Agent Kit 🏺✨
+# Alshhbaa Brassware AI Agent Kit 🏺✨
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Agent Plugins](https://img.shields.io/badge/Agent_Plugins-1.0.0-blue.svg)](https://agent-plugins.org)
@@ -7,9 +7,9 @@
 [![Smithery](https://img.shields.io/badge/Smithery-alshhbaa--r%2Fstore-blue.svg)](https://smithery.ai/servers/alshhbaa-r/store)
 [![skills.sh](https://img.shields.io/badge/skills.sh-alshhbaa--store-blue.svg)](https://skills.sh/alshhbaa/alshhbaa-agent-kit)
 
-The official AI Agent Integration Kit for **[Alshhbaa Copperware (متجر نحاسيات الشهباء)](https://shop.alshhbaa.com)** — a premier Saudi artisan retailer specializing in handcrafted brass chandeliers, Islamic & heritage lighting, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
+The official AI Agent Integration Kit for **[Alshhbaa Brassware (متجر نحاسيات الشهباء)](https://shop.alshhbaa.com)** — a premier Saudi artisan retailer specializing in handcrafted brass chandeliers, Islamic & heritage lighting, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
 
-This repository provides everything autonomous AI agents, coding assistants, and LLMs (Claude, ChatGPT, Cursor, Google Antigravity, OpenClaw, Cline) need to discover, query, validate, and interact with the Alshhbaa Copperware store safely and efficiently.
+This repository provides everything autonomous AI agents, coding assistants, and LLMs (Claude, ChatGPT, Cursor, Google Antigravity, OpenClaw, Cline) need to discover, query, validate, and interact with the Alshhbaa Brassware store safely and efficiently.
 
 ---
 
@@ -34,7 +34,7 @@ alshhbaa-agent-kit/
 
 ### 1. Using with Model Context Protocol (MCP)
 
-Alshhbaa Copperware provides a remote streamable HTTP MCP server at:
+Alshhbaa Brassware provides a remote streamable HTTP MCP server at:
 ```
 https://shop.alshhbaa.com/.well-known/mcp
 ```
@@ -87,7 +87,7 @@ Key REST API endpoints:
 
 ## 🛡️ Governance & Human-in-the-Loop (HITL) Guardrails
 
-Alshhbaa Copperware enforces strict agent permissions as defined in `/.well-known/agent-permissions.json`:
+Alshhbaa Brassware enforces strict agent permissions as defined in `/.well-known/agent-permissions.json`:
 
 1. **Human-in-the-Loop Checkout:** AI agents are allowed to search, browse, estimate shipping, and sync carts. However, **checkout and payment require explicit human confirmation**. Agents must never finalize payment autonomously.
 2. **Payment Security:** Agents must **never** capture, store, or transmit credit card details or CVVs. All transactions are securely completed on `https://shop.alshhbaa.com/checkout`.
@@ -113,4 +113,4 @@ For full rules and agent instructions, see [AGENTS.md](AGENTS.md).
 ## 📄 License
 
 This repository is licensed under the [MIT License](LICENSE).
-Copyright (c) 2026 Alshhbaa Copperware (متجر نحاسيات الشهباء).
+Copyright (c) 2026 Alshhbaa Brassware (متجر نحاسيات الشهباء).

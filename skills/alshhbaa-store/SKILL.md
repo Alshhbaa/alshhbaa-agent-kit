@@ -1,11 +1,11 @@
 ---
 name: alshhbaa-store
-description: Search Alshhbaa Copperware luxury lighting catalog, check real-time stock and prices, calculate shipping rates across Saudi cities, and validate shopper carts.
+description: Search Alshhbaa Brassware luxury lighting catalog, check real-time stock and prices, calculate shipping rates across Saudi cities, and validate shopper carts.
 ---
 
-# Alshhbaa Copperware Store Skill
+# Alshhbaa Brassware Store Skill
 
-Use this skill when an AI agent needs to browse, search, validate carts, or retrieve store information for **Alshhbaa Copperware** (متجر نحاسيات الشهباء), an authentic Saudi retailer specializing in handcrafted brass chandeliers, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
+Use this skill when an AI agent needs to browse, search, validate carts, or retrieve store information for **Alshhbaa Brassware** (متجر نحاسيات الشهباء), an authentic Saudi retailer specializing in handcrafted brass chandeliers, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
 
 ## Base URLs and Authentication
 

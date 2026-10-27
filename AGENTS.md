@@ -1,12 +1,12 @@
-# AGENTS.md — Alshhbaa Copperware AI Agent Integration Guidelines
+# AGENTS.md — Alshhbaa Brassware AI Agent Integration Guidelines
 
-This document provides definitive instructions, protocols, and architectural guidelines for AI agents, autonomous bots, and LLM-powered shopping assistants interacting with **Alshhbaa Copperware** (متجر نحاسيات الشهباء).
+This document provides definitive instructions, protocols, and architectural guidelines for AI agents, autonomous bots, and LLM-powered shopping assistants interacting with **Alshhbaa Brassware** (متجر نحاسيات الشهباء).
 
 ---
 
 ## 1. Domain Context & Identity
 
-- **Store:** Alshhbaa Copperware (متجر نحاسيات الشهباء)
+- **Store:** Alshhbaa Brassware (متجر نحاسيات الشهباء)
 - **Specialization:** Handcrafted brass lighting fixtures, heritage chandeliers, wall sconces, luxury table lamps, Bohemian crystal, and Italian glassware.
 - **Base Domain:** `https://shop.alshhbaa.com`
 - **Target Market:** Kingdom of Saudi Arabia (KSA) and GCC.
@@ -40,7 +40,7 @@ All autonomous agents MUST adhere to the governance rules declared at `/.well-kn
 
 ## 3. Protocol Discovery Surfaces
 
-Alshhbaa Copperware implements modern discovery and integration standards:
+Alshhbaa Brassware implements modern discovery and integration standards:
 
 | Protocol / Spec | Location | Purpose |
 |---|---|---|
