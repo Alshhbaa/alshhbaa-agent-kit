@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alshhbaa Brassware · AI Agent Kit & MCP Directory</title>
+  <meta name="description" content="AI Agent Kit and Developer Directory for Alshhbaa Brassware (نحاسيات الشهباء). Fast MCP server endpoints, agent skill installation commands, and official shop catalog.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://alshhbaa.github.io/alshhbaa-agent-kit/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alshhbaa.github.io/alshhbaa-agent-kit/">
+  <meta property="og:title" content="Alshhbaa Brassware · AI Agent Kit">
+  <meta property="og:description" content="Connect AI agents to Alshhbaa Brassware via standard MCP and skills commands.">
+  <meta property="og:image" content="https://tools.alshhbaa.com/assets/logo-colored.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@al_shhbaa_m">
+
+  <!-- Typography: Sentient & Tajawal -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- SEO Schema Graph: Organization + WebSite + OnlineStore -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://alshhbaa.com/#organization",
+        "name": "Alshhbaa Brassware",
+        "alternateName": ["شركة نحاسيات الشهباء", "نحاسيات الشهباء"],
+        "url": "https://alshhbaa.com/",
+        "logo": "https://tools.alshhbaa.com/assets/logo-colored.svg",
+        "email": "Contact@alshhbaa.com",
+        "telephone": "+966547323390",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Al-Khair Commercial Center, Aziziyah",
+          "addressLocality": "Jeddah",
+          "addressRegion": "Makkah Province",
+          "postalCode": "23334",
+          "addressCountry": "SA"
+        },
+        "sameAs": [
+          "https://shop.alshhbaa.com/",
+          "https://github.com/Alshhbaa",
+          "https://www.wikidata.org/wiki/Q141521866",
+          "https://x.com/al_shhbaa_m",
+          "https://www.instagram.com/al_shhbaa_m",
+          "https://www.tiktok.com/@alshahba.new",
+          "https://www.linkedin.com/company/al-shhbaa/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alshhbaa.com/#website",
+        "url": "https://alshhbaa.com/",
+        "name": "Alshhbaa Brassware (Architectural Lighting & Luxury Chandeliers)",
+        "publisher": { "@id": "https://alshhbaa.com/#organization" },
+        "inLanguage": ["en", "ar"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shop.alshhbaa.com/#website",
+        "url": "https://shop.alshhbaa.com/",
+        "name": "Alshhbaa Brassware Online Store (متجر نحاسيات الشهباء)",
+        "publisher": { "@id": "https://alshhbaa.com/#organization" },
+        "inLanguage": "ar"
+      },
+      {
+        "@type": "OnlineStore",
+        "@id": "https://shop.alshhbaa.com/#store",
+        "name": "Alshhbaa Brassware Store",
+        "alternateName": "متجر نحاسيات الشهباء",
+        "url": "https://shop.alshhbaa.com/",
+        "parentOrganization": { "@id": "https://alshhbaa.com/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #09090b;
+      --surface: #141417;
+      --surface-hover: #1c1c21;
+      --surface-code: #000000;
+      --ink: #f4f4f5;
+      --muted: #a1a1aa;
+      --subtle: #71717a;
+      --btn-bg: #ffffff;
+      --btn-fg: #09090b;
+      --btn-hover: #e4e4e7;
+      --font-en: "Sentient", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-ar: "Tajawal", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-en);
+      font-weight: 400;
+      line-height: 1.65;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html[dir="rtl"] body {
+      font-family: var(--font-ar);
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem) 6rem;
+    }
+
+    /* Top Nav */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: clamp(140px, 30vw, 175px);
+      height: auto;
+      display: block;
+    }
+
+    .lang-toggle {
+      display: flex;
+      background: var(--surface);
+      border-radius: 6px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      padding: 8px 14px;
+      min-height: 40px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: color 0.15s, background-color 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--surface-hover);
+      color: var(--ink);
+    }
+
+    /* Hero */
+    header {
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .lead {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 740px;
+      line-height: 1.7;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .supported-agents {
+      font-size: 0.9rem;
+      color: var(--subtle);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .supported-agents strong {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--btn-bg);
+      color: var(--btn-fg);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      min-height: 48px;
+      border-radius: 6px;
+      transition: background-color 0.15s;
+    }
+
+    .btn-main:hover {
+      background: var(--btn-hover);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.85rem 1.5rem;
+      min-height: 48px;
+      border-radius: 6px;
+      transition: background-color 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Code & Install Commands */
+    .install-card {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .install-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .install-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .install-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .code-box {
+      background: var(--surface-code);
+      border-radius: 6px;
+      padding: 0.85rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      direction: ltr;
+      text-align: left;
+      margin-bottom: 0.75rem;
+    }
+
+    .code-box code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      color: var(--ink);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 2px;
+    }
+
+    .code-block-pre {
+      background: var(--surface-code);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      background: var(--surface);
+      border: 0;
+      color: var(--muted);
+      padding: 8px 14px;
+      min-height: 38px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: color 0.15s, background-color 0.15s;
+    }
+
+    .copy-btn:hover {
+      background: var(--surface-hover);
+      color: var(--ink);
+    }
+
+    /* Store Catalog Grid (Shop Links Only) */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1rem;
+    }
+
+    .catalog-card {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background-color 0.15s;
+      min-height: 160px;
+    }
+
+    .catalog-card:hover {
+      background: var(--surface-hover);
+    }
+
+    .catalog-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .catalog-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .catalog-url {
+      color: var(--subtle);
+      font-size: 0.82rem;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* Protocol Links */
+    .specs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .spec-pill {
+      background: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.65rem 1.15rem;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 6px;
+      transition: background-color 0.15s;
+    }
+
+    .spec-pill:hover {
+      background: var(--surface-hover);
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 3.5rem;
+      color: var(--subtle);
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+    }
+
+    .legal-meta {
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--subtle);
+    }
+
+    /* Language display switching */
+    .lang-ar { display: none; }
+    html[dir="rtl"] .lang-en { display: none; }
+    html[dir="rtl"] .lang-ar { display: block; }
+    html[dir="rtl"] span.lang-ar,
+    html[dir="rtl"] a.lang-ar { display: inline-block; }
+
+    @media (max-width: 640px) {
+      .hero-actions { flex-direction: column; }
+      .btn-main, .btn-secondary { width: 100%; text-align: center; }
+      .code-box { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+      .copy-btn { align-self: flex-end; }
+      .catalog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <!-- Top Nav: Logo + Language Toggle -->
+    <nav class="top-bar" aria-label="Main Navigation">
+      <a href="https://shop.alshhbaa.com/" class="brand-link" title="Alshhbaa Brassware Store">
+        <img 
+          src="https://tools.alshhbaa.com/assets/logo-colored.svg" 
+          alt="Alshhbaa Brassware" 
+          class="brand-logo"
+          width="170" 
+          height="68"
+          loading="eager"
+        >
+      </a>
+      <div class="lang-toggle" role="tablist" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" id="btn-ar" onclick="setLang('ar')">عربي</button>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+      <div class="lang-en">
+        <h1>AI Agent Kit & MCP Hub</h1>
+        <p class="lead">
+          Integration directory and tools for AI agents and LLM assistants interacting with Alshhbaa Brassware (نحاسيات الشهباء), Saudi Arabia's premier handcrafted lighting and chandelier house.
+        </p>
+        <div class="hero-actions">
+          <a href="https://shop.alshhbaa.com/" class="btn-main">Visit Online Store (shop.alshhbaa.com)</a>
+          <a href="https://alshhbaa.com/" class="btn-secondary">Architectural Projects (alshhbaa.com)</a>
+        </div>
+      </div>
+
+      <div class="lang-ar">
+        <h1>بوابة وكلاء الذكاء الاصطناعي وخادم MCP</h1>
+        <p class="lead">
+          الدليل المرجعي والأدوات البرمجية لوكلاء ومساعدي الذكاء الاصطناعي للتكامل مع متجر نحاسيات الشهباء (Alshhbaa Brassware)، الصرح السعودي الرائد في تصنيع الثريات النحاسية الفاخرة والإنارة المعمارية في جدة.
+        </p>
+        <div class="hero-actions">
+          <a href="https://shop.alshhbaa.com/" class="btn-main">زيارة المتجر الإلكتروني (shop.alshhbaa.com)</a>
+          <a href="https://alshhbaa.com/" class="btn-secondary">مشاريع الإضاءة المعمارية (alshhbaa.com)</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section 1: AI Agent & MCP Setup -->
+      <section>
+        <div class="lang-en">
+          <h2>Agent Setup & Protocol Endpoints</h2>
+          <p class="section-intro">Installation commands and configuration snippets to register the skill or connect the MCP server.</p>
+        </div>
+        <div class="lang-ar">
+          <h2>أوامر التثبيت وواجهات البروتوكول</h2>
+          <p class="section-intro">أوامر وإعدادات مباشرة لتثبيت المهارة أو ربط خادم MCP مع وكيل الذكاء الاصطناعي.</p>
+        </div>
+
+        <!-- Skill Install Command Card -->
+        <article class="install-card">
+          <div class="install-header">
+            <span class="install-title">
+              <span class="lang-en">1. Install Agent Skill</span>
+              <span class="lang-ar">1. تثبيت مهارة الوكيل</span>
+            </span>
+          </div>
+          <p class="install-desc">
+            <span class="lang-en">Adds catalog search, shipping estimation, and cart verification to your agent environment:</span>
+            <span class="lang-ar">تثبيت مهارة البحث في الكتالوج، وحساب تكاليف الشحن، وفحص السلة:</span>
+          </p>
+          <div class="code-box">
+            <code>npx skills add alshhbaa/alshhbaa-agent-kit</code>
+            <button type="button" class="copy-btn" onclick="copySnippet(this, 'npx skills add alshhbaa/alshhbaa-agent-kit')">Copy</button>
+          </div>
+        </article>
+
+        <!-- MCP Server Connection Card -->
+        <article class="install-card">
+          <div class="install-header">
+            <span class="install-title">
+              <span class="lang-en">2. Connect MCP Server</span>
+              <span class="lang-ar">2. ربط خادم MCP</span>
+            </span>
+          </div>
+
+          <p class="install-desc">
+            <span class="lang-en">Add the streamable HTTP MCP server via CLI:</span>
+            <span class="lang-ar">إضافة خادم MCP المباشر عبر سطر الأوامر:</span>
+          </p>
+          <div class="code-box">
+            <code>claude mcp add alshhbaa-store https://shop.alshhbaa.com/.well-known/mcp</code>
+            <button type="button" class="copy-btn" onclick="copySnippet(this, 'claude mcp add alshhbaa-store https://shop.alshhbaa.com/.well-known/mcp')">Copy</button>
+          </div>
+
+          <p class="install-desc" style="margin-top: 1.25rem;">
+            <span class="lang-en">Or add to your client MCP configuration:</span>
+            <span class="lang-ar">أو أضف الإعداد في ملف تكوين خوادم MCP:</span>
+          </p>
+          <pre class="code-block-pre"><code>{
+  "mcpServers": {
+    "alshhbaa-store": {
+      "type": "streamable-http",
+      "url": "https://shop.alshhbaa.com/.well-known/mcp"
+    }
+  }
+}</code></pre>
+
+          <p class="install-desc" style="margin-top: 1.25rem;">
+            <span class="lang-en">Direct Streamable HTTP endpoint:</span>
+            <span class="lang-ar">الرابط المباشر لخادم MCP (Streamable HTTP):</span>
+          </p>
+          <div class="code-box">
+            <code>https://shop.alshhbaa.com/.well-known/mcp</code>
+            <button type="button" class="copy-btn" onclick="copySnippet(this, 'https://shop.alshhbaa.com/.well-known/mcp')">Copy</button>
+          </div>
+        </article>
+
+        <!-- Public Discovery Specs -->
+        <div class="specs-row">
+          <a href="https://shop.alshhbaa.com/llms.txt" class="spec-pill">llms.txt</a>
+          <a href="https://shop.alshhbaa.com/.well-known/agent-card.json" class="spec-pill">agent-card.json</a>
+          <a href="https://shop.alshhbaa.com/.well-known/openapi.json" class="spec-pill">OpenAPI 3.1.0</a>
+          <a href="https://shop.alshhbaa.com/.well-known/agent-permissions.json" class="spec-pill">agent-permissions.json</a>
+        </div>
+      </section>
+
+      <!-- Section 2: Online Store Catalog Directory (Shop Links Only) -->
+      <section>
+        <div class="lang-en">
+          <h2>Store Catalog & Categories</h2>
+          <p class="section-intro">Direct dofollow links to official shopping categories on shop.alshhbaa.com with live Saudi shipping.</p>
+        </div>
+        <div class="lang-ar">
+          <h2>الأقسام التخصصية ومراجع الكتالوج</h2>
+          <p class="section-intro">روابط مباشرة لكافة أقسام وتصنيفات الشراء المعتمدة عبر متجر نحاسيات الشهباء الإلكتروني.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <!-- Store Link 1: Chandeliers Category -->
+          <a href="https://shop.alshhbaa.com/categories/chandeliers" class="catalog-card">
+            <div>
+              <div class="catalog-name">
+                <span class="lang-en">Luxury Brass Chandeliers</span>
+                <span class="lang-ar">ثريات نحاس فاخرة</span>
+              </div>
+              <div class="catalog-desc">
+                <span class="lang-en">Handcrafted classical and modern brass chandeliers, mosque fixtures, and grand palace lighting.</span>
+                <span class="lang-ar">أرقى تشكيلة من الثريات النحاسية الكلاسيكية والحديثة وثريات المساجد والقصور.</span>
+              </div>
+            </div>
+            <div class="catalog-url">shop.alshhbaa.com/categories/chandeliers</div>
+          </a>
+
+          <!-- Store Link 2: Chandelier Accessories & Glass Cups -->
+          <a href="https://shop.alshhbaa.com/categories/accessories" class="catalog-card">
+            <div>
+              <div class="catalog-name">
+                <span class="lang-en">Chandelier Accessories & Glass Cups</span>
+                <span class="lang-ar">إكسسوارات وكاسات الثريات</span>
+              </div>
+              <div class="catalog-desc">
+                <span class="lang-en">Italian and Bohemian crystal glass cups (kassat), candle sleeves, chains, and authentic replacement parts.</span>
+                <span class="lang-ar">كاسات الزجاج والكريستال الإيطالي والبوهيمي وقطع الغيار الأصلية وإكسسوارات التعليق.</span>
+              </div>
+            </div>
+            <div class="catalog-url">shop.alshhbaa.com/categories/accessories</div>
+          </a>
+
+          <!-- Store Link 3: Table Lamps & Abajourat -->
+          <a href="https://shop.alshhbaa.com/categories/lamps" class="catalog-card">
+            <div>
+              <div class="catalog-name">
+                <span class="lang-en">Classic Brass Table Lamps</span>
+                <span class="lang-ar">أباجورات ومصابيح طاولة نحاسية</span>
+              </div>
+              <div class="catalog-desc">
+                <span class="lang-en">Refined classic table lamps, handcrafted brass bases, and hand-tailored luxury fabric lampshades.</span>
+                <span class="lang-ar">أباجورات طاولة فاخرة بقواعد نحاسية مشغولة يدويًا وقبعات قماشية راقية.</span>
+              </div>
+            </div>
+            <div class="catalog-url">shop.alshhbaa.com/categories/lamps</div>
+          </a>
+
+          <!-- Store Link 4: Wall Sconces & Appliques -->
+          <a href="https://shop.alshhbaa.com/categories/wall-sconces" class="catalog-card">
+            <div>
+              <div class="catalog-name">
+                <span class="lang-en">Brass Wall Sconces & Appliques</span>
+                <span class="lang-ar">إنارة جدارية وأبليكات نحاسية</span>
+              </div>
+              <div class="catalog-desc">
+                <span class="lang-en">Single and multi-arm cast brass wall sconces, heritage corridor fixtures, and ambient indoor lighting.</span>
+                <span class="lang-ar">أبليكات جدارية نحاسية مفردة ومزدوجة ومصابيح ممرات بطابع أصيل وفخم.</span>
+              </div>
+            </div>
+            <div class="catalog-url">shop.alshhbaa.com/categories/wall-sconces</div>
+          </a>
+
+          <!-- Store Link 5: Main Storefront -->
+          <a href="https://shop.alshhbaa.com/" class="catalog-card">
+            <div>
+              <div class="catalog-name">
+                <span class="lang-en">Alshhbaa Brassware Online Store</span>
+                <span class="lang-ar">متجر نحاسيات الشهباء الإلكتروني</span>
+              </div>
+              <div class="catalog-desc">
+                <span class="lang-en">Official e-commerce storefront with live stock, SAR pricing with 15% VAT, and nationwide express shipping.</span>
+                <span class="lang-ar">المتجر الإلكتروني الرسمي مع أسعار بالريال السعودي تشمل الضريبة وخيارات دفع وشحن متعددة.</span>
+              </div>
+            </div>
+            <div class="catalog-url">shop.alshhbaa.com/</div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div>
+        <span class="lang-en">
+          © 2026 Alshhbaa Brassware. All rights reserved. 
+          Official Platforms: <a href="https://shop.alshhbaa.com/">Online Store</a> · <a href="https://alshhbaa.com/">Company Website</a> · <a href="https://alshhbaa.com/contact/">Showrooms in Jeddah</a>
+        </span>
+        <span class="lang-ar">
+          جميع الحقوق محفوظة © 2026 شركة نحاسيات الشهباء ذ.م.م.
+          المنصات الرسمية: <a href="https://shop.alshhbaa.com/">المتجر الإلكتروني</a> · <a href="https://alshhbaa.com/">الموقع الهندسي</a> · <a href="https://alshhbaa.com/contact/">معارض جدة</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      const html = document.documentElement;
+      const btnEn = document.getElementById('btn-en');
+      const btnAr = document.getElementById('btn-ar');
+      if (lang === 'ar') {
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+        btnAr.classList.add('active');
+        btnEn.classList.remove('active');
+        localStorage.setItem('alshhbaa_pref_lang', 'ar');
+      } else {
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        btnEn.classList.add('active');
+        btnAr.classList.remove('active');
+        localStorage.setItem('alshhbaa_pref_lang', 'en');
+      }
+    }
+
+    function copySnippet(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+
+    // Persist language or default to English
+    (function init() {
+      const saved = localStorage.getItem('alshhbaa_pref_lang');
+      if (saved === 'ar') {
+        setLang('ar');
+      } else {
+        setLang('en');
+      }
+    })();
+  </script>
+</body>
+</html>
